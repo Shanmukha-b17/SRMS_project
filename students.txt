@@ -1,0 +1,16 @@
+1001 Rajesh 87.5
+1002 Priya 92.3
+1003 Arjun 78.9
+1004 Neha 88.7
+1005 Vikram 95.2
+1006 Ananya 81.4
+1007 Rohan 89.6
+1008 Pooja 76.8
+1009 Aditya 84.2
+1010 Sneha 91.5
+1011 Karan 79.3
+1012 Divya 86.4
+1013 Nikhil 93.7
+1014 Isha 82.1
+1015 Sanjay 88.9
+317 shanmukha 85.0
