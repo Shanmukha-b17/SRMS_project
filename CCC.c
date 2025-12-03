@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<windows.h>
 
 #define STUDENTFILE "students.txt"
 #define CREDENTIALSFILE "credentials.txt"
@@ -28,14 +29,32 @@ void updateStudent(void);
 void deleteStudent(void);
 
 int main (){
- if(   loginSystem()){
-    mainMenu();
- }
- else{
-    printf("Exiting the program.\n");
+    /* Get the directory of the executable and change to it */
+    char exePath[MAX_PATH];
+    char exeDir[MAX_PATH];
+    
+    GetModuleFileNameA(NULL, exePath, MAX_PATH);
+    
+    /* Extract directory from full path */
+    strcpy(exeDir, exePath);
+    int i = strlen(exeDir) - 1;
+    while(i >= 0 && exeDir[i] != '\\') {
+        i--;
+    }
+    exeDir[i + 1] = '\0';
+    
+    /* Change to executable directory */
+    SetCurrentDirectoryA(exeDir);
+    
+    if(   loginSystem()){
+        mainMenu();
+    }
+    else{
+        printf("Exiting the program.\n");
+    }
+    printf("\nPress Enter to close...\n");
+    getchar();
     return 0;
- }
-     return 0;
 }
 
 int loginSystem(){
